@@ -4,16 +4,16 @@
 
 /* Style the body */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 0;
 }
 
 /* Header/logo Title */
 .header {
-  padding: 80px;
+  padding: 30px;
   text-align: center;
-  background: #1abc9c;
-  color: white;
+  background: #fff;
+  color: #000;
 }
 
 /* Increase the font size of the heading */
@@ -24,7 +24,7 @@ body {
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #000;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -40,7 +40,6 @@ body {
   text-decoration: none;
 }
 
-
 /* Right-aligned link */
 .navbar a.right {
   float: right;
@@ -48,13 +47,14 @@ body {
 
 /* Change color on hover */
 .navbar a:hover {
+  transition: all 0.3s ease;
   background-color: #ddd;
   color: black;
 }
 
 /* Active/current link */
 .navbar a.active {
-  background-color: #666;
+  background-color: #008000;
   color: white;
 }
 
@@ -71,7 +71,7 @@ body {
 .side {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
-  background-color: #f1f1f1;
+  background-color: #fff;
   padding: 20px;
 }
 
@@ -79,15 +79,16 @@ body {
 .main {
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
-  background-color: white;
+  background-color: #fff;
   padding: 20px;
 }
 
 /* Fake image, just for this example */
-.fakeimg {
+.big_img {
   background-color: #aaa;
-  width: 100%;
-  padding: 20px;
+  max-width: 75%;
+  height: auto;
+  padding: 0px;
 }
 
 /* Footer */

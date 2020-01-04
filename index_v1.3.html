@@ -5,6 +5,7 @@
 <meta charset="UTF-8"> <!--unicode encoding-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
 <body>
 
@@ -16,81 +17,60 @@
   <a href="#" class="active">Home</a>
   <a href="https://github.com/SavLM">GithHub</a>
   <a href="https://www.linkedin.com/in/savannah-mclaurin/">LinkedIn</a>
-  <a href="mailto:savleighm@outlook.com" class="right">Contact Me</a>-->
+  <a href="mailto:savleighm@outlook.com" class="right">Contact Me</a>
 </div>
 
 <div class="row">
   <div class="side">
-    <img src="images\moi.jpg" style="height:200px;"></img>
+    <img class="big_img" src="images\moi.jpg"></img>
   </div>
   <div class="main">
-    <p></p>
     <div id="resume_content">
-      <h1>EDUCATION</h1>
-        <h2>University of Virginia School of Engineering and Applied Science | Class of 2019</h2>
-          <p>Bachelor of Science in Computer Engineering</p>
-        <h2>Jackson River Governor’s School | Class of 2013</h2>
-          <p>2-year program at Dabney S. Lancaster Community College</p>
-        <h2>Bath County High School | Class of 2013</h2>
-          <p>Graduated Salutatorian with an Advanced Diploma</p>
-
-      <br>
-      <br>
-
-      <h1>WORK EXPERIENCE</h1>
-      <h2>Information Technology Assistant Jr. | Federal Reserve Information Technology August 15, 2017 – January 15, 2018</h2>
-        <ul>
-          <li>Project Coordinator and Administrative Assistant for the Federal Reserve’s National IT internship program</li>
-          <li>Aided project transitioning Fed applications and services to a new, secure environment</li>
-          <li>
-            <ul>
-              <li>Performed administrative tasks for Scrum teams</li>
-              <li>Improved organizational tools and documented standards/processes</li>
-              <li>Prepared communications material for senior leadership</li>
-              <li>Transcribed important discussions and outlined/tracked action items</li>
-            </ul>
-          </li>
-        </ul>
-      <h2>Technical Project Assistant | University of Virginia Career Center May 17, 2016 – August 1, 2016</h2>
-        <ul>
-          <li>Assistant for the UVA Career Center IT department</li>
-          <li>Supported the implementation and organization of a new recruiting platform</li>
-          <li>
-            <ul>
-              <li>Aided with the extraction, synthesis, and management of large data sets for transition to new platform</li>
-              <li>Assisted with the development of student/staff/employer training materials</li>
-            </ul>
-          </li>
-        </ul>
-      <h2>Kids Club Attendant | The Omni Homestead Resort December 3, 2011 – June 13, 2015</h2>
-        <ul>
-          <li>3½ years as a Daycare Counselor at the Omni Homestead Resort</li>
-        </ul>
-
-      <br>
-      <br>
-
-      <h1>SKILLS</h1>
-        <h2>Languages</h2>
-          <p>C++, C, Java, Python, CSS, HTML, JavaScript, MySQL, PHP, x86 Assembly</p>
-        <h2>Hardware</h2>
-          <p>Microcontrollers, Designing PCBs,  Hardware testing devices: Oscilloscope, Multisim, Digital Multimeter, Virtual Bench</p>
-        <h2>Applications</h2>
-          <p>JIRA, SharePoint, Visio, Multisim, MATLAB, Logisim, Eclipse, Emacs, Vim, Microsoft Office, Django Framework, Some familiarity with Microsoft Azure Cloud and with AWS</p>
-        <h2>Project Management</h2>
-          <p>Risk and Issue tracking, Action Item logging,  User Story writing, Scribing for meetings, Creating Gantt Charts</p>
-
-      <br>
-      <br>
-
-      <h1>LEADERSHIP/TEAM EXPERIENCE</h1>
-        <h2>Capstone Project Team Member (Fall of 2016)</h2>
-          <p>5-month long Senior Project with a team of 4 other Computer/Electrical Engineering students developing a vest designed to assist individuals with visual impairments navigate the real world using spatial simulation powered by a system of infrared sensors causing haptic feedback.</p>
-        <h2>Cavalier Marching Band Member (2013-2014)</h2>
-          <p>Marched 2 seasons with 300+ other UVA students during UVA Football games and attended a leadership camp for improving teamwork and leadership skills.</p>
-        <h2>Engineering Project Team Member (Fall of 2013)</h2>
-          <p>Worked with 47 other individuals to address the problems with current youth football helmets in preventing concussions among youth players by creating a helmet to better protect the players’ heads and necks.</p>
     </div>
+    <script>
+      var output = "";
+      var l = education.length;
+      output+="<h1>EDUCATION</h1>";
+      for (i=0; i < l; i++){
+        output+="<h2>" + education[i].name + " | " + education[i].date + "</h2>";
+        output+="<p>" + education[i].descr + "</p>";
+      }
+      output+="<br><br>";
+
+      l = work.length;
+      output+="<h1>WORK EXPERIENCE</h1>";
+      for (i=0; i < l; i++){
+        output+="<h2>" + work[i].title + " | " + work[i].company + work[i].start + " - " + work[i].end + "</h2>";
+        output+=work[i].descr;
+      }
+
+      output+="<br><br>";
+
+      l = skill.length;
+      output+="<h1>SKILLS</h1>";
+      for (i=0; i < l; i++){
+        output+="<h2>" + skill[i].category + "</h2>";
+        output+="<p>";
+        var sl = skill[i].skills.length;
+        for (j=0; j < sl-1; j++){
+          output+=skill[i].skills[j] + ", ";
+        }
+        if(sl>0){
+          output+=skill[i].skills[sl-1];
+        }
+        output+="</p>";
+      }
+
+      output+="<br><br>";
+
+      l = leadership.length;
+      output+="<h1>LEADERSHIP</h1>";
+      for (i=0; i < l; i++){
+        output+="<h2>" + leadership[i].title + " (" + leadership[i].date + ")</h2>";
+        output+="<p>" + leadership[i].descr + "</p>";
+      }
+      document.getElementById('resume_content').innerHTML = output;
+    </script>
     <br>
   </div>
 </div>
