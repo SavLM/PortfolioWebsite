@@ -30,24 +30,28 @@
     <script>
       var output = "";
       var l = education.length;
-      output+="<h1>EDUCATION</h1>";
+      output+="<h1 id=\"education_header\"><a href=\"#\">EDUCATION</a></h1>";
+      output+="<div class=\"hide\" id=\"education_info\">";
       for (i=0; i < l; i++){
         output+="<h2>" + education[i].name + " | " + education[i].date + "</h2>";
         output+="<p>" + education[i].descr + "</p>";
       }
+      output+="</div>";
       output+="<br><br>";
 
       l = work.length;
-      output+="<h1>WORK EXPERIENCE</h1>";
+      output+="<h1 id=\"work_header\"><a href=\"#\">WORK EXPERIENCE</a></h1>";
+      output+="<div class=\"hide\" id=\"work_info\">";
       for (i=0; i < l; i++){
         output+="<h2>" + work[i].title + " | " + work[i].company + work[i].start + " - " + work[i].end + "</h2>";
         output+=work[i].descr;
       }
-
+      output+="</div>";
       output+="<br><br>";
 
       l = skill.length;
-      output+="<h1>SKILLS</h1>";
+      output+="<h1 id=\"skill_header\"><a href=\"#\">SKILLS</a></h1>";
+      output+="<div class=\"hide\" id=\"skill_info\">";
       for (i=0; i < l; i++){
         output+="<h2>" + skill[i].category + "</h2>";
         output+="<p>";
@@ -60,16 +64,22 @@
         }
         output+="</p>";
       }
-
+      output+="</div>";
       output+="<br><br>";
 
       l = leadership.length;
-      output+="<h1>LEADERSHIP</h1>";
+      output+="<h1 id=\"leadership_header\"><a href=\"#\">LEADERSHIP</a></h1>";
+      output+="<div class=\"hide\" id=\"leadership_info\">";
       for (i=0; i < l; i++){
         output+="<h2>" + leadership[i].title + " (" + leadership[i].date + ")</h2>";
         output+="<p>" + leadership[i].descr + "</p>";
       }
+      output+="</div>";
       document.getElementById('resume_content').innerHTML = output;
+      document.getElementById("education_header").onclick = function() {showInfo("education_info")};
+      document.getElementById("work_header").onclick = function() {showInfo("work_info")};
+      document.getElementById("skill_header").onclick = function() {showInfo("skill_info")};
+      document.getElementById("leadership_header").onclick = function() {showInfo("leadership_info")};
     </script>
     <br>
   </div>

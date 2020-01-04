@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Savannah McLaurin</title>
+<meta charset="UTF-8"> <!--unicode encoding-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Savannah McLaurin</h1>
+</div>
+
+<div class="navbar">
+  <a href="#" class="active">Resume</a>
+  <a href="https://github.com/SavLM">GithHub</a>
+  <a href="https://www.linkedin.com/in/savannah-mclaurin/">LinkedIn</a>
+  <a href="mailto:savleighm@outlook.com" class="right">Contact Me</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <img class="big_img" src="images\moi.jpg"></img>
+    <div class="resume_header">
+      <a id="education_header" href="#"><h2>EDUCATION</h2></a>
+      <a id="work_header" href="#"><h2>WORK EXPERIENCE</h2></a>
+      <a id="skill_header" href="#"><h2>SKILLS</h2></a>
+      <a id="leadership_header" href="#"><h2>LEADERSHIP</h2></a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="resume_content">
+      <div id="resume_info">
+      </div>
+      <br><br>
+    </div>
+
+    <script>
+      var blank = "";
+      var education_info = "";
+      var l = education.length;
+      for (i=0; i < l; i++){
+        education_info+="<h2>" + education[i].name + " | " + education[i].date + "</h2>";
+        education_info+="<p>" + education[i].descr + "</p>";
+        education_info+="<br>";
+      }
+
+      var work_info = "";
+      l = work.length;
+      for (i=0; i < l; i++){
+        work_info+="<h2>" + work[i].title + " | " + work[i].company + "</h2>";
+        work_info+="<h3>" + work[i].start + " - " + work[i].end + "</h3>";
+        work_info+=work[i].descr;
+        work_info+="<br>";
+      }
+
+      var skill_info = "";
+      l = skill.length;
+      for (i=0; i < l; i++){
+        skill_info+="<h2>" + skill[i].category + "</h2>";
+        skill_info+="<p>";
+        var sl = skill[i].skills.length;
+        for (j=0; j < sl-1; j++){
+          skill_info+=skill[i].skills[j] + ", ";
+        }
+        if(sl>0){
+          skill_info+=skill[i].skills[sl-1];
+        }
+        skill_info+="</p>";
+        skill_info+="<br>";
+      }
+
+      var leadership_info = "";
+      l = leadership.length;
+      for (i=0; i < l; i++){
+        leadership_info+="<h2>" + leadership[i].title + " (" + leadership[i].date + ")</h2>";
+        leadership_info+="<p>" + leadership[i].descr + "</p>";
+        leadership_info+="<br>";
+      }
+
+      document.getElementById("education_header").onclick = function() {showInfo(1, education_info)};
+      document.getElementById("work_header").onclick = function() {showInfo(2, work_info)};
+      document.getElementById("skill_header").onclick = function() {showInfo(3, skill_info)};
+      document.getElementById("leadership_header").onclick = function() {showInfo(4, leadership_info)};
+    </script>
+    <br>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Built by Savannah McLaurin with AWS S3 buckets and html, css, and javascript</p>
+</div>
+
+</body>
+</html>

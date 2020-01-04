@@ -99,6 +99,16 @@ var leadership = [
   },
 ]
 
-function myFunction() {
- document.getElementById("demo").innerHTML = "Paragraph changed.";
+var res_view = false;
+var res_id = 0;
+function showInfo(i, item) {
+  if(i == res_id && res_view){
+    document.getElementById("resume_info").innerHTML = "";
+    res_view = false;
+  }
+  else{
+    document.getElementById("resume_info").innerHTML = item;
+    res_view = true;
+  }
+  res_id = i;
 }

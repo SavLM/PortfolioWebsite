@@ -6,11 +6,12 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
+  font-size: 16px;
 }
 
 /* Header/logo Title */
 .header {
-  padding: 30px;
+  padding: 0px;
   text-align: center;
   background: #fff;
   color: #000;
@@ -69,16 +70,16 @@ body {
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
+  -ms-flex: 20%; /* IE10 */
+  flex: 20%;
   background-color: #fff;
   padding: 20px;
 }
 
 /* Main column */
 .main {
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
+  -ms-flex: 80%; /* IE10 */
+  flex: 80%;
   background-color: #fff;
   padding: 20px;
 }
@@ -86,9 +87,37 @@ body {
 /* Fake image, just for this example */
 .big_img {
   background-color: #aaa;
-  max-width: 75%;
+  max-width: 80%;
   height: auto;
-  padding: 0px;
+  padding: 0;
+  margin: 14px;
+}
+
+.resume_header {
+  overflow: hidden;
+}
+
+.resume_header a {
+  color: #000;
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.resume_header a:hover {
+ transition: all 0.3s ease;
+ background-color: #ddd;
+ color: black;
+}
+
+.resume_info h2 {
+  padding-left: 40px;
+  text-align: center;
+}
+
+.resume_info p {
+  padding-left: 40px;
+  text-align: center;
 }
 
 /* Footer */
