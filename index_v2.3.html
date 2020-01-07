@@ -10,24 +10,36 @@
 <body>
 
 <div class="header">
-  <h1>Savannah McLaurin</h1>
+  <div class="h-left">
+    <img class="big_img" src="images\moi.jpg"></img>
+  </div>
+  <div class="h-right">
+    <h1>Savannah McLaurin</h1>
+  </div>
 </div>
 
 <div class="navbar">
   <a href="#" class="active">Resume</a>
-  <a href="https://github.com/SavLM">GithHub</a>
+  <a href="https://github.com/SavLM">GitHub</a>
   <a href="https://www.linkedin.com/in/savannah-mclaurin/">LinkedIn</a>
   <a href="mailto:savleighm@outlook.com" class="right">Contact Me</a>
 </div>
 
 <div class="row">
   <div class="side">
-    <img class="big_img" src="images\moi.jpg"></img>
-    <div class="resume_header">
-      <a id="education_header" href="#resume_info"><h2>EDUCATION</h2></a>
-      <a id="work_header" href="#resume_info"><h2>WORK EXPERIENCE</h2></a>
-      <a id="skill_header" href="#resume_info"><h2>SKILLS</h2></a>
-      <a id="leadership_header" href="#resume_info"><h2>LEADERSHIP</h2></a>
+    <div id="resume_header">
+      <div class="small-nav">
+        <a id="education_header2" href="#resume_info"><h2>C:\> Education</h2></a>
+        <a id="work_header2" href="#resume_info"><h2>C:\> Work experience</h2></a>
+        <a id="skill_header2" href="#resume_info"><h2>C:\> Skills</h2></a>
+        <a id="leadership_header2" href="#resume_info"><h2>C:\> Leadership</h2></a>
+      </div>
+      <div class="big-nav">
+        <a id="education_header" href="#"><h2>C:\> Education</h2></a>
+        <a id="work_header" href="#"><h2>C:\> Work experience</h2></a>
+        <a id="skill_header" href="#"><h2>C:\> Skills</h2></a>
+        <a id="leadership_header" href="#"><h2>C:\> Leadership</h2></a>
+      </div>
     </div>
   </div>
   <div class="main">
@@ -36,8 +48,8 @@
       </div>
       <br><br>
     </div>
-
     <script>
+      var deflt = "<p class=\"main-txt\">Hello.</p>";
       var blank = "";
       var education_info = "";
       var l = education.length;
@@ -79,13 +91,16 @@
         leadership_info+="<p>" + leadership[i].descr + "</p>";
         leadership_info+="<br>";
       }
-
-      document.getElementById("education_header").onclick = function() {showInfo(1, education_info)};
-      document.getElementById("work_header").onclick = function() {showInfo(2, work_info)};
-      document.getElementById("skill_header").onclick = function() {showInfo(3, skill_info)};
-      document.getElementById("leadership_header").onclick = function() {showInfo(4, leadership_info)};
+      document.getElementById("resume_info").innerHTML = deflt;
+      document.getElementById("education_header").onclick = function() {showInfo(1, education_info, deflt)};
+      document.getElementById("work_header").onclick = function() {showInfo(2, work_info, deflt)};
+      document.getElementById("skill_header").onclick = function() {showInfo(3, skill_info, deflt)};
+      document.getElementById("leadership_header").onclick = function() {showInfo(4, leadership_info, deflt)};
+      document.getElementById("education_header2").onclick = function() {showInfo(1, education_info, deflt)};
+      document.getElementById("work_header2").onclick = function() {showInfo(2, work_info, deflt)};
+      document.getElementById("skill_header2").onclick = function() {showInfo(3, skill_info, deflt)};
+      document.getElementById("leadership_header2").onclick = function() {showInfo(4, leadership_info, deflt)};
     </script>
-    <br>
   </div>
 </div>
 

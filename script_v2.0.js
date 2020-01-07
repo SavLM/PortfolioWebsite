@@ -101,9 +101,9 @@ var leadership = [
 
 var res_view = false;
 var res_id = 0;
-function showInfo(i, item) {
+function showInfo(i, item, deflt) {
   if(i == res_id && res_view){
-    document.getElementById("resume_info").innerHTML = "";
+    document.getElementById("resume_info").innerHTML = deflt;
     res_view = false;
   }
   else{

@@ -3,20 +3,44 @@
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Lucida Console", 'Open Sans', Arial, sans-serif;
   margin: 0;
   font-size: 16px;
 }
 
 .header {
   padding: 0px;
-  text-align: center;
   background: #fff;
   color: #000;
+  overflow: hidden;
+  max-height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: "Lucida Console";
+}
+
+.h-left {
+  flex: 0 0 200px;
+  overflow: hidden;
+}
+
+.h-right {
+  flex: 1;
+  align-self: center;
 }
 
 .header h1 {
   font-size: 40px;
+  text-align: center;
+}
+
+.big_img {
+  background-color: #aaa;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  opacity: 60%;
+  max-height: 100%;
 }
 
 .navbar {
@@ -34,6 +58,7 @@ body {
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
+  min-width: 200px;
 }
 
 .navbar a.right {
@@ -47,51 +72,56 @@ body {
 }
 
 .navbar a.active {
-  background-color: #008000;
-  color: white;
+  background-color: #ddd;
+  color: #000;
 }
 
 .row {
-  display: -ms-flexbox; /* IE10 */
+  width: 100%;
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .side {
-  -ms-flex: 20%; /* IE10 */
-  flex: 20%;
+  flex: 0 0 350px;
   background-color: #fff;
-  padding: 20px;
+  overflow: hidden;
+  height: auto;
+  padding-top: 20px;
 }
 
 .main {
-  -ms-flex: 80%; /* IE10 */
-  flex: 80%;
   background-color: #fff;
   padding: 20px;
+  overflow: hidden;
+  flex: 1;
 }
 
-.big_img {
-  background-color: #aaa;
-  max-width: 80%;
-  height: auto;
-  padding: 0;
-  margin: 14px;
+.main-txt {
+  font-size: 128px;
+  text-align: center;
 }
 
-.resume_header {
+.big-nav a {
+  display: block;
+}
+
+.small-nav a {
+  display: none;
+}
+
+#resume_header {
   overflow: hidden;
 }
 
-.resume_header a {
+#resume_header a {
+  background-color: #fff;
   color: #000;
-  display: block;
-  padding: 14px 20px;
+  padding: 20px;
   text-decoration: none;
 }
 
-.resume_header a:hover {
+#resume_header a:hover {
  transition: all 0.3s ease;
  background-color: #ddd;
  color: black;
@@ -120,14 +150,24 @@ body {
     flex-direction: column;
   }
 
-  .big_img {
-    max-width: 50%;
+  .side {
+    flex: 0 0;
   }
 
+  .big-nav a {
+    display: none;
+  }
+
+  .small-nav a {
+    display: block;
+  }
   .navbar {
     position: static;
   }
-
+  .main-txt {
+    padding-left: 0;
+    text-align: center;
+  }
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
@@ -139,9 +179,5 @@ body {
   .navbar a {
     float: none;
     width: 100%;
-  }
-
-  .big_img {
-    max-width: 50%;
   }
 }
