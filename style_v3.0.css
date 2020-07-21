@@ -41,6 +41,7 @@ body {
   filter: grayscale(100%);
   opacity: 60%;
   max-height: 100%;
+  max-width: 100%;
 }
 
 .navbar {
